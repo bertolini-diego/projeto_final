@@ -1,0 +1,122 @@
+###############################################################################
+#
+# IAR ELF Linker V9.10.1.308/W64 for ARM                  18/May/2021  08:36:04
+# Copyright 2007-2021 IAR Systems AB.
+#
+#    Output file  =
+#        C:\Users\diego\OneDrive\햞ea de Trabalho\TUDO\FACULDADE\Sistemas
+#        Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto
+#        Final\Debug\Exe\projeto_final.out
+#    Map file     =
+#        C:\Users\diego\OneDrive\햞ea de Trabalho\TUDO\FACULDADE\Sistemas
+#        Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto
+#        Final\Debug\List\projeto_final.map
+#    Command line =
+#        -f "C:\Users\diego\OneDrive\햞ea de Trabalho\TUDO\FACULDADE\Sistemas
+#        Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto
+#        Final\Debug\Exe\projeto_final.out.rsp" ("C:\Users\diego\OneDrive\햞ea
+#        de Trabalho\TUDO\FACULDADE\Sistemas
+#        Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto
+#        Final\Debug\Obj\projeto_final.o" "C:\Users\diego\OneDrive\햞ea de
+#        Trabalho\TUDO\FACULDADE\Sistemas
+#        Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto
+#        Final\Debug\Obj\startup_TM4C1294.o" --no_out_extension -o
+#        "C:\Users\diego\OneDrive\햞ea de Trabalho\TUDO\FACULDADE\Sistemas
+#        Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto
+#        Final\Debug\Exe\projeto_final.out" --redirect _Printf=_PrintfFullNoMb
+#        --redirect _Scanf=_ScanfFullNoMb --map "C:\Users\diego\OneDrive\햞ea
+#        de Trabalho\TUDO\FACULDADE\Sistemas
+#        Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto
+#        Final\Debug\List\projeto_final.map" --config "C:\Program Files\IAR
+#        Systems\Embedded Workbench
+#        9.0\arm\config\linker\TexasInstruments\TM4C1294NC.icf" --semihosting
+#        --no_library_search --entry __iar_program_start --vfe --text_out
+#        locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at address 0x0 { ro section .intvec };
+"P1":  place in [from 0x0 to 0xf'ffff] { ro };
+define block CSTACK with size = 32K, alignment = 8 { };
+define block HEAP with size = 64K, alignment = 8 { };
+"P2":  place in [from 0x2000'0000 to 0x2003'ffff] {
+          rw, block CSTACK, block HEAP };
+
+No sections matched the following patterns:
+
+  rw  in "P2"
+
+
+  Section   Kind         Address    Size  Object
+  -------   ----         -------    ----  ------
+"A0":                              0x3c0
+  .intvec   ro code          0x0   0x3c0  startup_TM4C1294.o [1]
+                         - 0x3c0   0x3c0
+
+"P1":                              0x42e
+  .text     ro code        0x3c0   0x42c  projeto_final.o [1]
+  .text     ro code        0x7ec     0x2  startup_TM4C1294.o [1]
+                         - 0x7ee   0x42e
+
+"P2":                             0x8000
+  CSTACK             0x2000'0000  0x8000  <Block>
+    CSTACK  uninit   0x2000'0000  0x8000  <Block tail>
+                   - 0x2000'8000  0x8000
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+        0x7ee     0xf'ffff  0xf'f812
+  0x2000'8000  0x2003'ffff  0x3'8000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module              ro code  rw data
+    ------              -------  -------
+command line/config:
+    ------------------------------------
+    Total:
+
+C:\Users\diego\OneDrive\햞ea de Trabalho\TUDO\FACULDADE\Sistemas Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto Final\Debug\Obj: [1]
+    projeto_final.o       1'068
+    startup_TM4C1294.o      962
+    ------------------------------------
+    Total:                2'030
+
+    Linker created                32'768
+----------------------------------------
+    Grand Total:          2'030   32'768
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                     Address  Size  Type      Object
+-----                     -------  ----  ----      ------
+CSTACK$$Base          0x2000'0000         --   Gb  - Linker created -
+CSTACK$$Limit         0x2000'8000         --   Gb  - Linker created -
+__Vectors                     0x0         --   Gb  startup_TM4C1294.o [1]
+__Vectors_End               0x3c0        Data  Gb  startup_TM4C1294.o [1]
+__Vectors_Size {Abs}        0x3c0         --   Gb  startup_TM4C1294.o [1]
+__iar_program_start         0x3c1        Code  Gb  projeto_final.o [1]
+__vector_table                0x0        Data  Gb  startup_TM4C1294.o [1]
+__vector_table_0x1c          0x1c        Data  Gb  startup_TM4C1294.o [1]
+
+
+[1] = C:\Users\diego\OneDrive\햞ea de Trabalho\TUDO\FACULDADE\Sistemas Microcontrolados\Programas\EK-TM4C1294_SM_IAR8-main\Projects\Projeto Final\Debug\Obj
+
+   2'030 bytes of readonly  code memory
+  32'768 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
